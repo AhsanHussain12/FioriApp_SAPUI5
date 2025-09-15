@@ -1,0 +1,27 @@
+<mvc:View controllerName="fioriapp.controller.Master"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page id="MasterPage">
+    <content>
+        <List
+            id="masterActionList"
+            headerText="Actions"
+            mode="SingleSelectMaster" >
+            
+            <StandardListItem
+                title="Add Employee"
+                icon="sap-icon://add"
+                type="Active"
+                press="onAddEmployee" />
+
+            <StandardListItem
+                title="View All Employees"
+                icon="sap-icon://group"
+                type="Active"
+                press="onViewAllEmployees" />
+
+        </List>
+    </content>
+    </Page>
+</mvc:View>

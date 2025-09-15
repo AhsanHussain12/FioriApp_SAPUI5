@@ -1,0 +1,123 @@
+{
+  "_version": "1.76.0",
+  "sap.app": {
+    "id": "fioriapp",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.18.6",
+      "toolsId": "121430ca-7e07-46e9-82c9-f22c98ecfc26"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.140.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "fioriapp.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "splitApp",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "fioriapp.view",
+        "async": true,
+        "viewPath": "fioriapp.view"
+      },
+      "routes": [
+        {
+          "name": "home",
+          "pattern": "",
+          "target": [
+            "Master",
+            "Detail"
+          ]
+        },
+        {
+          "name": "employeesList",
+          "pattern": "employeesList",
+          "target":[
+            "Master",
+            "Employees"
+          ]
+        }
+      ],
+      "targets": {
+        "Master":{
+          "viewType": "XML",
+          "transition":"slide",
+          "controlAggregation": "masterPages",
+          "id": "Master",
+          "name": "Master"
+        },
+        "Detail":{
+          "viewType": "XML",
+          "transition":"slide",
+          "controlAggregation": "detailPages",
+          "id": "Detail",
+          "name": "Detail"
+        },
+        "Employees":{
+            "name": "Employees", 
+            "id": "Employees",
+            "viewType": "XML",
+            "controlAggregation": "detailPages"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "fioriapp.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}

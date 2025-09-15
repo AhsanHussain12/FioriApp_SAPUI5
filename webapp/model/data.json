@@ -1,0 +1,6 @@
+{
+    "employees":[
+        { "name": "Ali", "org": "TMC", "field": "DT", "isEditable": false },
+        { "name": "Sara", "org": "TMC", "field": "BTP", "isEditable": false }
+    ]
+}

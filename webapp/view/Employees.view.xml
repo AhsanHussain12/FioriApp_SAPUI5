@@ -1,0 +1,10 @@
+<mvc:View controllerName="fioriapp.controller.Employees"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page id="EmployeesDetail">
+    <content>
+    <Text text="Employees Detail Page"></Text>
+    </content>
+    </Page>
+</mvc:View>
