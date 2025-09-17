@@ -78,7 +78,7 @@
           "pattern": "",
           "target": [
             "Master",
-            "Detail"
+            "Employees"
           ]
         },
         {
@@ -87,6 +87,22 @@
           "target":[
             "Master",
             "Employees"
+          ]
+        },
+        {
+          "name": "addemployeesForm",
+          "pattern": "addemployeesForm",
+          "target":[
+            "Master",
+            "AddEmployeeForm"
+          ]
+        },
+        {
+          "name": "updateEmployeeform",
+          "pattern": "updateEmployeeform/{empIdx}",
+          "target":[
+            "Master",
+            "UpdateEmployeeForm"
           ]
         }
       ],
@@ -110,6 +126,18 @@
             "id": "Employees",
             "viewType": "XML",
             "controlAggregation": "detailPages"
+        },
+        "AddEmployeeForm":{
+          "name": "AddEmployeeForm",
+          "id": "AddEmployeeForm",
+          "viewType": "XML",
+          "controlAggregation": "detailPages"
+        },
+        "UpdateEmployeeForm":{
+          "name": "UpdateEmployeeForm",
+          "id": "UpdateEmployeeForm",
+          "viewType": "XML",
+          "controlAggregation": "detailPages"
         }
       }
     },

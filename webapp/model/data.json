@@ -1,6 +1,52 @@
 {
-    "employees":[
-        { "name": "Ali", "org": "TMC", "field": "DT", "isEditable": false },
-        { "name": "Sara", "org": "TMC", "field": "BTP", "isEditable": false }
-    ]
+  "employees": [
+    {
+      "fullName": "Ali Khan",
+      "employeeId": "EMP001",
+      "email": "ali.khan@tmc.com",
+      "phoneNumber": "+92-300-1112233",
+      "joiningDate": "January 15, 2023",
+      "organisation": "TMC",
+      "address": "123 Main Street, Karachi",
+      "designation": "Software Engineer",
+      "department": "IT",
+      "salary": "120,000 PKR"
+    },
+    {
+      "fullName": "Sara Ahmed",
+      "employeeId": "EMP002",
+      "email": "sara.ahmed@tmc.com",
+      "phoneNumber": "+92-321-5556677",
+      "joiningDate": "March 12, 2023",
+      "organisation": "TMC",
+      "address": "45 Clifton Block 2, Karachi",
+      "designation": "HR Specialist",
+      "department": "HR",
+      "salary": "95,000 PKR"
+    },
+    {
+      "fullName": "Omar Farooq",
+      "employeeId": "EMP003",
+      "email": "omar.farooq@tmc.com",
+      "phoneNumber": "+92-333-9998877",
+      "joiningDate": "July 05, 2024",
+      "organisation": "TMC",
+      "address": "78 Model Town, Lahore",
+      "designation": "Project Manager",
+      "department": "OPS",
+      "salary": "180,000 PKR"
+    },
+    {
+      "fullName": "Ayesha Malik",
+      "employeeId": "EMP004",
+      "email": "ayesha.malik@tmc.com",
+      "phoneNumber": "+92-345-1122334",
+      "joiningDate": "December 31, 2025",
+      "organisation": "TMC",
+      "address": "12 F-7/3, Islamabad",
+      "designation": "Data Analyst",
+      "department": "R&D",
+      "salary": "110,000 PKR"
+    }
+  ]
 }

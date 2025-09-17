@@ -1,7 +1,8 @@
 sap.ui.define([
     "sap/ui/core/UIComponent",
-    "fioriapp/model/models"
-], (UIComponent, models) => {
+    "fioriapp/model/models",
+    "sap/ui/model/json/JSONModel"
+], (UIComponent, models,JSONModel) => {
     "use strict";
 
     return UIComponent.extend("fioriapp.Component", {
@@ -21,6 +22,17 @@ sap.ui.define([
 
             // enable routing
             this.getRouter().initialize();
+
+            // model set globally
+            var sPath = sap.ui.require.toUrl("fioriapp/model/data.json");
+            var oModel = new JSONModel();
+            oModel.loadData(sPath);
+
+            oModel.attachRequestCompleted(() => {
+                console.log("Model data:", oModel.getData());
+                const employees = oModel.getData().employees;
+                this.setModel(new JSONModel(employees), "employeesModel");
+            });
         }
     });
 });

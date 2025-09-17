@@ -1,0 +1,120 @@
+<mvc:View
+    controllerName="fioriapp.controller.AddEmployeeForm"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:c="sap.ui.core"
+>
+    <Page id="AddEmployeeForm">
+        <content>
+            <f:SimpleForm
+                editable="true"
+                layout="ResponsiveGridLayout"
+            >
+                <c:Title
+                    text="Employee Details"
+                    icon="sap-icon://form"
+                />
+                <f:content>
+                    <Label
+                        id="FullName"
+                        text="FullName"
+                    />
+                    <Input
+                        id="inputName"
+                        required="true"
+                    />
+
+                    <Label text="Employee ID" />
+                    <Input
+                        id="inputEmpId"
+                        required="true"
+                    />
+
+                    <Label text="Joining Date" />
+                    <DatePicker
+                        id="joinDate"
+                        value="{EmployeeModel>/joinDate}"
+                        displayFormat="long"
+                        required="true"
+                    />
+
+                    <Label text="Organisation" />
+                    <Input
+                        id="organisation"
+                        value="TMC"
+                        type="Text"
+                        editable="false"
+                    />
+                    <Label text="Salary" />
+                    <Input
+                        id="inputSalary"
+                        type="Text"
+                        required="true"
+                    />
+                    <c:Title
+                        text="Additional Details"
+                        icon="sap-icon://detail-view"
+                    />
+                    <Label text="Email" />
+                    <Input
+                        id="inputEmail"
+                        type="Email"
+                        required="true"
+                    />
+
+                    <Label text="Phone Number" />
+                    <Input
+                        id="inputPhone"
+                        type="Tel"
+                        required="true"
+                    />
+
+                    <Label text="Designation" />
+                    <Select
+                        id="designation"
+                        items="{DesignationModel>/}"
+                        forceSelection="true"
+                        required="true"
+                    >
+                        <c:ListItem
+                            key="{DesignationModel>name}"
+                            text="{DesignationModel>name}"
+                        />
+                    </Select>
+
+                    <Label text="Department" />
+                    <Select
+                        id="department"
+                        items="{DepartmentModel>/}"
+                        showSecondaryValues="true"
+                        forceSelection="true"
+                        required="true"
+                    >
+                        <c:ListItem
+                            key="{DepartmentModel>abbreviation}"
+                            text="{DepartmentModel>abbreviation}"
+                            additionalText="{DepartmentModel>name}"
+                        />
+                    </Select>
+
+                    <Label text="Address" />
+                    <TextArea
+                        id="inputAddress"
+                        rows="3"
+                    />
+                </f:content>
+            </f:SimpleForm>
+            <Button
+                text="Submit"
+                press="onSubmit"
+                type="Accept"
+            />
+            <Button
+                text="Reset"
+                press="onReset"
+                type="Reject"
+            />
+        </content>
+    </Page>
+</mvc:View>

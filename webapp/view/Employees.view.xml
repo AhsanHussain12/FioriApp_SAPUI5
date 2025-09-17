@@ -1,10 +1,50 @@
-<mvc:View controllerName="fioriapp.controller.Employees"
+<mvc:View
+    controllerName="fioriapp.controller.Employees"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
 >
     <Page id="EmployeesDetail">
-    <content>
-    <Text text="Employees Detail Page"></Text>
-    </content>
+        <content>
+            <Table
+                id="table"
+                headerText="Employees"
+                items="{employeesModel>/}"
+                itemPress="onItemPress"
+            >
+                <columns>
+                    <Column>
+                        <header>
+                            <Label text="ID" />
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Label text="Name" />
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Label text="Organisation" />
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Label text="Department" />
+                        </header>
+                    </Column>
+                </columns>
+                <ColumnListItem type="Active" >
+                    <cells >
+                        <Link text="{employeesModel>employeeId}" />
+                        <ObjectIdentifier
+                            title="{employeesModel>fullName}"
+                            text="{employeesModel>designation}"
+                        />
+                        <Text text="{employeesModel>organisation}" />
+                        <Text text="{employeesModel>department}" />
+                    </cells>
+                </ColumnListItem>
+            </Table>
+        </content>
     </Page>
 </mvc:View>

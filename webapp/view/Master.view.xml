@@ -7,19 +7,23 @@
         <List
             id="masterActionList"
             headerText="Actions"
-            mode="SingleSelectMaster" >
+            mode="SingleSelectMaster"
+            itemPress="onItemPress"
+        >
             
             <StandardListItem
+                id="1"
                 title="Add Employee"
                 icon="sap-icon://add"
                 type="Active"
-                press="onAddEmployee" />
+             />
 
             <StandardListItem
+                id="2"
                 title="View All Employees"
                 icon="sap-icon://group"
                 type="Active"
-                press="onViewAllEmployees" />
+            />
 
         </List>
     </content>

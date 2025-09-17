@@ -1,0 +1,16 @@
+{
+  "designations": [
+    { "name": "HR Specialist" },
+    { "name": "Financial Analyst" },
+    { "name": "Software Engineer" },
+    { "name": "Sales Executive" },
+    { "name": "Marketing Executive" },
+    { "name": "Customer Support Representative" },
+    { "name": "IT Specialist" },
+    { "name": "Data Analyst" },
+    { "name": "Project Manager" },
+    { "name": "Team Lead" },
+    { "name": "Business Analyst" },
+    { "name": "Operations Manager" }
+  ]
+}

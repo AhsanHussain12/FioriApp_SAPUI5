@@ -1,0 +1,14 @@
+{
+  "departments": [
+    { "name": "Human Resources", "abbreviation": "HR" },
+    { "name": "Finance", "abbreviation": "FIN" },
+    { "name": "Engineering", "abbreviation": "ENG" },
+    { "name": "Sales", "abbreviation": "SAL" },
+    { "name": "Marketing", "abbreviation": "MKT" },
+    { "name": "Customer Support", "abbreviation": "CS" },
+    { "name": "IT", "abbreviation": "IT" },
+    { "name": "Research and Development", "abbreviation": "R&D" },
+    { "name": "Legal", "abbreviation": "LEG" },
+    { "name": "Operations", "abbreviation": "OPS" }
+  ]
+}

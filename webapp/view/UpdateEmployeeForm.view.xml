@@ -1,0 +1,139 @@
+<mvc:View
+    controllerName="fioriapp.controller.UpdateEmployeeForm"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:c="sap.ui.core"
+>
+    <Page id="UpdateEmployeeForm">
+        <content>
+            <f:SimpleForm
+                editable="false"
+                layout="ResponsiveGridLayout"
+            >
+                <c:Title
+                    text="Employee Details"
+                    icon="sap-icon://form"
+                />
+                <f:content>
+                    <Label text="FullName" />
+                    <Input
+                        id="updatedName"
+                        value="{oData>/fullName}"
+                        editable="{= ${ToggleEditableModel>/isEditable} }"
+                    />
+
+                    <Label text="Employee ID" />
+                    <Input
+                        id="empId"
+                        value="{oData>/employeeId}"
+                        editable="false"
+                    />
+
+                    <Label text="Joining Date" />
+                    <DatePicker
+                        id="updatedJoindate"
+                        value="{oData>/joiningDate}"
+                        displayFormat="long"
+                        editable="{= ${ToggleEditableModel>/isEditable} }"
+                    />
+
+                    <Label text="Organisation" />
+                    <Input
+                        value="TMC"
+                        type="Text"
+                        editable="false"
+                    />
+
+                    <Label text="Salary" />
+                    <Input
+                        id="updatedSalary"
+                        type="Text"
+                        value="{oData>/salary}"
+                        editable="{= ${ToggleEditableModel>/isEditable} }"
+                    />
+
+                    <Label text="Email" />
+                    <Input
+                        id="updatedEmail"
+                        type="Email"
+                        value="{oData>/email}"
+                        editable="{= ${ToggleEditableModel>/isEditable} }"
+                    />
+
+                    <Label text="Phone Number" />
+                    <Input
+                        id="updatedPhone"
+                        type="Tel"
+                        value="{oData>/phoneNumber}"
+                        editable="{= ${ToggleEditableModel>/isEditable} }"
+                    />
+
+                    <Label text="Designation" />
+                    <Select
+                        id="updatedDesignation"
+                        items="{DesignationModel>/}"
+                        forceSelection="true"
+                        required="true"
+                        selectedKey="{oData>/designation}"
+                        editable="{= ${ToggleEditableModel>/isEditable} }"
+                    >
+                        <c:ListItem
+                            key="{DesignationModel>name}"
+                            text="{DesignationModel>name}"
+                        />
+                    </Select>
+
+                    <Label text="Department" />
+                    <Select
+                        id="updatedDepartment"
+                        items="{DepartmentModel>/}"
+                        showSecondaryValues="true"
+                        forceSelection="true"
+                        required="true"
+                        selectedKey="{oData>/department}"
+                        editable="{= ${ToggleEditableModel>/isEditable} }"
+                    >
+                        <c:ListItem
+                            key="{DepartmentModel>abbreviation}"
+                            text="{DepartmentModel>abbreviation}"
+                            additionalText="{DepartmentModel>name}"
+                        />
+                    </Select>
+
+                    <Label text="Address" />
+                    <TextArea
+                        id="updatedAddress"
+                        rows="3"
+                        value="{oData>/address}"
+                        editable="{= ${ToggleEditableModel>/isEditable} }"
+                    />
+                </f:content>
+            </f:SimpleForm>
+            <Button
+                text="EDIT"
+                press="onToggleEdit"
+                type="Default"
+                visible="{= !${ToggleEditableModel>/isEditable} }"
+            />
+            <Button
+                text="SAVE"
+                press="onSave"
+                type="Accept"
+                visible="{= ${ToggleEditableModel>/isEditable}}"
+            />
+            <Button
+                text="Cancel"
+                press="onToggleEdit"
+                type="Default"
+                visible="{= ${ToggleEditableModel>/isEditable}}"
+            />
+            <Button
+                text="Delete"
+                press="onDelete"
+                type="Reject"
+                visible="{= !${ToggleEditableModel>/isEditable} }"
+            />
+        </content>
+    </Page>
+</mvc:View>
