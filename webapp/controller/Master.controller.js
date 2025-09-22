@@ -1,22 +1,3 @@
-
-
-//         onDelete(oEvent) {
-//             //for seprate btn at each record
-//             // const sourceSIDArray = oEvent.oSource.sId.split("-");
-//             // const recordIndex = sourceSIDArray[sourceSIDArray.length - 1];
-
-//             // for event propagation at parent element like table
-//             // add mode delete in table
-//             const sourceSid = oEvent.mParameters.listItem.sId.split("-");
-//             const recordIndex = sourceSid[sourceSid.length - 1];
-//             if (recordIndex > -1) {
-//                 // remove a single element at index using splice(Idx,No of Elements)
-//                 this.getView().getModel('EmployeesModel').getData().splice(recordIndex, 1);
-//                 this.getView().getModel('EmployeesModel').refresh();
-//             }
-
-
-
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel"
@@ -43,6 +24,9 @@ sap.ui.define([
                 case "2":
                     // console.log("Nav to View EMP");
                     oRouter.navTo("employeesList")
+                    break;
+                case "3":
+                    oRouter.navTo("default")
                     break;
                 default:
                     break;

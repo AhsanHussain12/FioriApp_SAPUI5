@@ -1,0 +1,24 @@
+<mvc:View
+    controllerName="fioriapp.controller.Default"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page id="Default">
+        <content>
+            <IconTabBar>
+                <items>
+
+                    <IconTabFilter icon="sap-icon://home">
+                        <Label text="Page#1" />
+                        <Button text="Goto HomePage" type="Default" press="navToHome"/>
+                    </IconTabFilter>
+
+                    <IconTabFilter icon="sap-icon://legend">
+                        <Label text="Page#2" />
+                    </IconTabFilter>
+                    
+                </items>
+            </IconTabBar>
+        </content>
+    </Page>
+</mvc:View>

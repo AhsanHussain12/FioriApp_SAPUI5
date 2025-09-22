@@ -5,7 +5,7 @@
     xmlns:f="sap.ui.layout.form"
     xmlns:c="sap.ui.core"
 >
-    <Page id="UpdateEmployeeForm">
+    <Page id="UpdateEmployeeForm" showNavButton="true" navButtonPress="onNavBack">
         <content>
             <f:SimpleForm
                 editable="false"
@@ -111,13 +111,13 @@
                 </f:content>
             </f:SimpleForm>
             <Button
-                text="EDIT"
+                text="Edit"
                 press="onToggleEdit"
                 type="Default"
                 visible="{= !${ToggleEditableModel>/isEditable} }"
             />
             <Button
-                text="SAVE"
+                text="Save"
                 press="onSave"
                 type="Accept"
                 visible="{= ${ToggleEditableModel>/isEditable}}"

@@ -1,0 +1,13 @@
+<mvc:View
+    controllerName="fioriapp.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:c="sap.ui.core"
+>
+    <Page id="HomePage" >
+        <content>
+            <Label text="Home Page"></Label>
+        </content>
+    </Page>
+</mvc:View>

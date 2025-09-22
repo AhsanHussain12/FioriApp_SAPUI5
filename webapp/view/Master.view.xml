@@ -24,6 +24,12 @@
                 icon="sap-icon://group"
                 type="Active"
             />
+            <StandardListItem
+                id="3"
+                title="Default"
+                icon="sap-icon://accessibility"
+                type="Active"
+            />
 
         </List>
     </content>

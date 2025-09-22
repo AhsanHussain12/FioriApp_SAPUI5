@@ -104,6 +104,19 @@
             "Master",
             "UpdateEmployeeForm"
           ]
+        },
+        {
+          "name": "default",
+          "pattern": "default",
+          "target":[
+            "Master",
+            "Default"
+          ]
+        },
+        {
+          "name": "homePage",
+          "pattern": "homePage",
+          "target" :["Home"]
         }
       ],
       "targets": {
@@ -136,6 +149,18 @@
         "UpdateEmployeeForm":{
           "name": "UpdateEmployeeForm",
           "id": "UpdateEmployeeForm",
+          "viewType": "XML",
+          "controlAggregation": "detailPages"
+        },
+        "Default":{
+          "name": "Default",
+          "id": "Default",
+          "controlAggregation": "detailPages",
+          "viewType": "XML"
+        },
+        "Home":{
+          "name": "Home",
+          "id": "Home",
           "viewType": "XML",
           "controlAggregation": "detailPages"
         }

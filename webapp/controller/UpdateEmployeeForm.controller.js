@@ -42,11 +42,14 @@ sap.ui.define([
             var idx = oArgs.empIdx;
             console.log("empIdx:", idx);
             const employeesModel = this.getView().getModel("employeesModel").getData();
-            console.log(employeesModel[idx]);
+            if (!employeesModel[idx]) {
+                var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+                oRouter.navTo("employeesList")
+            }
             this.getView().setModel(new JSONModel(employeesModel[idx]), "oData")
         },
 
-        onSave(oEvent) {
+        onSave() {
             try {
                 var oSelectdepartment = this.byId('updatedDepartment')
                 var departmentkey = oSelectdepartment.getSelectedKey();
@@ -69,12 +72,10 @@ sap.ui.define([
                 let oDataModel = this.getView().getModel("employeesModel").getData();
                 const employee = oDataModel.find((data) => data.employeeId === oData.employeeId)
                 if (employee) {
-                    Object.assign(employee, oData); // instead of manually updating all properties
+                    Object.assign(employee, oData); // instead of manually updating all properties one by one
                     this.getView().getModel("employeesModel").refresh();
+                    this.onToggleEdit();
                     MessageBox.success("Employee Updated!");
-                    onToggleEdit();
-                    var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-                    oRouter.navTo("employeesList")
                 }
                 else {
                     throw new Error("Employee Record Not Found")
@@ -95,12 +96,31 @@ sap.ui.define([
 
         onDelete() {
             try {
-                let oDataModel = this.getView().getModel("employeesModel").getData();
-            } catch (error) {
-                
-            }
-        }
 
+                let employeesModel = this.getView().getModel("employeesModel").getData();
+                const idx = employeesModel.findIndex(emp => emp.employeeId === this.byId('empId').getValue());
+                if (idx > -1) {
+                    employeesModel.splice(idx, 1);
+                    this.getView().getModel("employeesModel").refresh();
+                    MessageBox.success("Employee Deleted");
+                    var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+                    oRouter.navTo("employeesList")
+
+                }
+                else {
+                    throw new Error("Invalid index")
+                }
+
+            } catch (error) {
+                console.error(error);
+                MessageBox.error("Failed To Delete Employee")
+            }
+        },
+
+        onNavBack: function () {
+            var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+            oRouter.navTo("employeesList")
+        }
 
 
 

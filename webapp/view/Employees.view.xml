@@ -5,6 +5,7 @@
 >
     <Page id="EmployeesDetail">
         <content>
+        <SearchField liveChange="onSearch"/>
             <Table
                 id="table"
                 headerText="Employees"
