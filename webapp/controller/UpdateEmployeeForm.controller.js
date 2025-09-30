@@ -57,23 +57,27 @@ sap.ui.define([
                 var designationKey = oSelectdesignation.getSelectedKey();
 
                 let oData = {
-                    fullName: this.byId('updatedName').getValue(),
-                    employeeId: this.byId('empId').getValue(),
-                    email: this.byId("updatedEmail").getValue(),
-                    phoneNumber: this.byId('updatedPhone').getValue(),
-                    joiningDate: this.byId('updatedJoindate').getValue(),
-                    organisation: "TMC",
-                    address: this.byId("updatedAddress").getValue(),
-                    designation: designationKey,
-                    department: departmentkey,
-                    salary: this.byId('updatedSalary').getValue()
-                }
+                    ZFULLNAME: this.byId('updatedName').getValue(),
+                    ZEMPLOYEEID: this.byId('empId').getValue(),
+                    ZEMAIL: this.byId("updatedEmail").getValue(),
+                    ZPHONENUMBER: this.byId('updatedPhone').getValue(),
+                    ZJOININGDATE: this.byId('updatedJoindate').getValue(),
+                    ZORGANISATION: "TMC",
+                    ZADDRESS: this.byId("updatedAddress").getValue(),
+                    ZDESIGNATION: designationKey,
+                    ZDEPARTMENT: departmentkey,
+                    ZSALARY: this.byId('updatedSalary').getValue()
+                };
 
                 let oDataModel = this.getView().getModel("employeesModel").getData();
-                const employee = oDataModel.find((data) => data.employeeId === oData.employeeId)
+
+                const employee = oDataModel.find((data) => data.ZEMPLOYEEID === oData.ZEMPLOYEEID);
+
                 if (employee) {
-                    Object.assign(employee, oData); // instead of manually updating all properties one by one
+                    // instead of manually updating all properties one by one
+                    Object.assign(employee, oData);
                     this.getView().getModel("employeesModel").refresh();
+
                     this.onToggleEdit();
                     MessageBox.success("Employee Updated!");
                 }
@@ -90,6 +94,9 @@ sap.ui.define([
 
         onToggleEdit() {
             var oModel = this.getView().getModel("ToggleEditableModel");
+            // example of 2-way binding no need to manually refresh the model
+            // as when binding observers/listeners are setup the auto updates contorl 
+            // properties
             var current = oModel.getProperty("/isEditable");
             oModel.setProperty("/isEditable", !current);
         },
@@ -98,7 +105,7 @@ sap.ui.define([
             try {
 
                 let employeesModel = this.getView().getModel("employeesModel").getData();
-                const idx = employeesModel.findIndex(emp => emp.employeeId === this.byId('empId').getValue());
+                const idx = employeesModel.findIndex(emp => emp.ZEMPLOYEEID === this.byId('empId').getValue());
                 if (idx > -1) {
                     employeesModel.splice(idx, 1);
                     this.getView().getModel("employeesModel").refresh();

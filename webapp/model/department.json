@@ -10,5 +10,6 @@
     { "name": "Research and Development", "abbreviation": "R&D" },
     { "name": "Legal", "abbreviation": "LEG" },
     { "name": "Operations", "abbreviation": "OPS" }
+    
   ]
 }

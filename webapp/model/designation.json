@@ -11,6 +11,7 @@
     { "name": "Project Manager" },
     { "name": "Team Lead" },
     { "name": "Business Analyst" },
-    { "name": "Operations Manager" }
+    { "name": "Operations Manager" },
+    {"name" : "Accountant"  }
   ]
 }

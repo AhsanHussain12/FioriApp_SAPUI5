@@ -9,12 +9,23 @@ server:
     - name: fiori-tools-proxy
       afterMiddleware: compression
       configuration:
-        ignoreCertErrors: false # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
+        ignoreCertErrors: false
         ui5:
           path:
             - /resources
             - /test-resources
           url: https://ui5.sap.com
+        backend:
+          - url: http://faa2020.tmc.com:50000
+            client: '601'
+            authenticationType: BasicAuthentication
+            destination: TMC_FAA_2020
+            path: /sap
+          - url: http://faa2020.tmc.com:50000
+            client: '601'
+            authenticationType: BasicAuthentication
+            destination: TMC_FAA_2020
+            path: /sap/opu/odata/sap/ZSAH_TEST_SRV/
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:

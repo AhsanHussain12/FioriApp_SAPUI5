@@ -36,13 +36,13 @@
                 </columns>
                 <ColumnListItem type="Active" >
                     <cells >
-                        <Link text="{employeesModel>employeeId}" />
+                        <Link text="{employeesModel>ZEMPLOYEEID}" />
                         <ObjectIdentifier
-                            title="{employeesModel>fullName}"
-                            text="{employeesModel>designation}"
+                            title="{employeesModel>ZFULLNAME}"
+                            text="{employeesModel>ZDESIGNATION}"
                         />
-                        <Text text="{employeesModel>organisation}" />
-                        <Text text="{employeesModel>department}" />
+                        <Text text="{employeesModel>ZORGANISATION}" />
+                        <Text text="{employeesModel>ZDEPARTMENT}" />
                     </cells>
                 </ColumnListItem>
             </Table>

@@ -14,6 +14,17 @@
       "id": "@sap/generator-fiori:basic",
       "version": "1.18.6",
       "toolsId": "121430ca-7e07-46e9-82c9-f22c98ecfc26"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZSAH_TEST_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
     }
   },
   "sap.ui": {
@@ -51,6 +62,11 @@
         "settings": {
           "bundleName": "fioriapp.i18n.i18n"
         }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
       }
     },
     "resources": {
@@ -84,7 +100,7 @@
         {
           "name": "employeesList",
           "pattern": "employeesList",
-          "target":[
+          "target": [
             "Master",
             "Employees"
           ]
@@ -92,7 +108,7 @@
         {
           "name": "addemployeesForm",
           "pattern": "addemployeesForm",
-          "target":[
+          "target": [
             "Master",
             "AddEmployeeForm"
           ]
@@ -100,7 +116,7 @@
         {
           "name": "updateEmployeeform",
           "pattern": "updateEmployeeform/{empIdx}",
-          "target":[
+          "target": [
             "Master",
             "UpdateEmployeeForm"
           ]
@@ -108,7 +124,7 @@
         {
           "name": "default",
           "pattern": "default",
-          "target":[
+          "target": [
             "Master",
             "Default"
           ]
@@ -116,49 +132,51 @@
         {
           "name": "homePage",
           "pattern": "homePage",
-          "target" :["Home"]
+          "target": [
+            "Home"
+          ]
         }
       ],
       "targets": {
-        "Master":{
+        "Master": {
           "viewType": "XML",
-          "transition":"slide",
+          "transition": "slide",
           "controlAggregation": "masterPages",
           "id": "Master",
           "name": "Master"
         },
-        "Detail":{
+        "Detail": {
           "viewType": "XML",
-          "transition":"slide",
+          "transition": "slide",
           "controlAggregation": "detailPages",
           "id": "Detail",
           "name": "Detail"
         },
-        "Employees":{
-            "name": "Employees", 
-            "id": "Employees",
-            "viewType": "XML",
-            "controlAggregation": "detailPages"
+        "Employees": {
+          "name": "Employees",
+          "id": "Employees",
+          "viewType": "XML",
+          "controlAggregation": "detailPages"
         },
-        "AddEmployeeForm":{
+        "AddEmployeeForm": {
           "name": "AddEmployeeForm",
           "id": "AddEmployeeForm",
           "viewType": "XML",
           "controlAggregation": "detailPages"
         },
-        "UpdateEmployeeForm":{
+        "UpdateEmployeeForm": {
           "name": "UpdateEmployeeForm",
           "id": "UpdateEmployeeForm",
           "viewType": "XML",
           "controlAggregation": "detailPages"
         },
-        "Default":{
+        "Default": {
           "name": "Default",
           "id": "Default",
           "controlAggregation": "detailPages",
           "viewType": "XML"
         },
-        "Home":{
+        "Home": {
           "name": "Home",
           "id": "Home",
           "viewType": "XML",

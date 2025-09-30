@@ -19,37 +19,37 @@
                     <Label text="FullName" />
                     <Input
                         id="updatedName"
-                        value="{oData>/fullName}"
+                        value="{oData>/ZFULLNAME}"
                         editable="{= ${ToggleEditableModel>/isEditable} }"
                     />
 
                     <Label text="Employee ID" />
                     <Input
                         id="empId"
-                        value="{oData>/employeeId}"
+                        value="{oData>/ZEMPLOYEEID}"
                         editable="false"
                     />
 
                     <Label text="Joining Date" />
                     <DatePicker
                         id="updatedJoindate"
-                        value="{oData>/joiningDate}"
+                        value="{oData>/ZJOININGDATE}"
                         displayFormat="long"
                         editable="{= ${ToggleEditableModel>/isEditable} }"
                     />
 
                     <Label text="Organisation" />
                     <Input
-                        value="TMC"
+                        value="{oData>/ZORGANISATION}"
                         type="Text"
-                        editable="false"
+                        editable="{= ${ToggleEditableModel>/isEditable} }"
                     />
 
                     <Label text="Salary" />
                     <Input
                         id="updatedSalary"
-                        type="Text"
-                        value="{oData>/salary}"
+                        type="Number"
+                        value="{oData>/ZSALARY}"
                         editable="{= ${ToggleEditableModel>/isEditable} }"
                     />
 
@@ -57,7 +57,7 @@
                     <Input
                         id="updatedEmail"
                         type="Email"
-                        value="{oData>/email}"
+                        value="{oData>/ZEMAIL}"
                         editable="{= ${ToggleEditableModel>/isEditable} }"
                     />
 
@@ -65,7 +65,7 @@
                     <Input
                         id="updatedPhone"
                         type="Tel"
-                        value="{oData>/phoneNumber}"
+                        value="{oData>/ZPHONENUMBER}"
                         editable="{= ${ToggleEditableModel>/isEditable} }"
                     />
 
@@ -75,7 +75,7 @@
                         items="{DesignationModel>/}"
                         forceSelection="true"
                         required="true"
-                        selectedKey="{oData>/designation}"
+                        selectedKey="{oData>/ZDESIGNATION}"
                         editable="{= ${ToggleEditableModel>/isEditable} }"
                     >
                         <c:ListItem
@@ -91,11 +91,11 @@
                         showSecondaryValues="true"
                         forceSelection="true"
                         required="true"
-                        selectedKey="{oData>/department}"
+                        selectedKey="{oData>/ZDEPARTMENT}"
                         editable="{= ${ToggleEditableModel>/isEditable} }"
                     >
                         <c:ListItem
-                            key="{DepartmentModel>abbreviation}"
+                            key="{DepartmentModel>name}"
                             text="{DepartmentModel>abbreviation}"
                             additionalText="{DepartmentModel>name}"
                         />
@@ -105,7 +105,7 @@
                     <TextArea
                         id="updatedAddress"
                         rows="3"
-                        value="{oData>/address}"
+                        value="{oData>/ZADDRESS}"
                         editable="{= ${ToggleEditableModel>/isEditable} }"
                     />
                 </f:content>
